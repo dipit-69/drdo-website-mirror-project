@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 21 90% 48%; /* Saffron */
+    --primary: 210 100% 28%; /* Deep DRDO Blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 139 81% 20%; /* Dark Green */
+    --secondary: 210 80% 35%; /* Lighter DRDO Blue */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
@@ -38,10 +38,11 @@
     --radius: 0.5rem;
 
     /* Government specific colors */
-    --gov-saffron: 21 90% 48%;
+    --gov-blue: 210 100% 28%; /* Main DRDO Blue */
+    --gov-blue-dark: 210 100% 20%; /* Darker blue for top bar */
+    --gov-blue-light: 210 80% 35%; /* Lighter blue for hover states */
     --gov-white: 0 0% 100%;
-    --gov-green: 139 81% 20%;
-    --gov-navy: 220 50% 20%;
+    --gov-accent: 197 100% 50%; /* Light blue accent from the image */
   }
 
   .dark {
@@ -51,9 +52,9 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 21 90% 48%;
+    --primary: 210 100% 28%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 139 81% 20%;
+    --secondary: 210 80% 35%;
     --secondary-foreground: 0 0% 100%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -79,31 +80,39 @@
 }
 
 @layer utilities {
-  .text-gov-saffron {
-    color: hsl(var(--gov-saffron));
+  .text-gov-blue {
+    color: hsl(var(--gov-blue));
   }
   
-  .text-gov-green {
-    color: hsl(var(--gov-green));
+  .text-gov-blue-dark {
+    color: hsl(var(--gov-blue-dark));
   }
   
-  .text-gov-navy {
-    color: hsl(var(--gov-navy));
+  .text-gov-blue-light {
+    color: hsl(var(--gov-blue-light));
   }
   
-  .bg-gov-saffron {
-    background-color: hsl(var(--gov-saffron));
+  .text-gov-accent {
+    color: hsl(var(--gov-accent));
   }
   
-  .bg-gov-green {
-    background-color: hsl(var(--gov-green));
+  .bg-gov-blue {
+    background-color: hsl(var(--gov-blue));
   }
   
-  .bg-gov-navy {
-    background-color: hsl(var(--gov-navy));
+  .bg-gov-blue-dark {
+    background-color: hsl(var(--gov-blue-dark));
   }
   
-  .border-gov-saffron {
-    border-color: hsl(var(--gov-saffron));
+  .bg-gov-blue-light {
+    background-color: hsl(var(--gov-blue-light));
+  }
+  
+  .bg-gov-accent {
+    background-color: hsl(var(--gov-accent));
+  }
+  
+  .border-gov-blue {
+    border-color: hsl(var(--gov-blue));
   }
 }
