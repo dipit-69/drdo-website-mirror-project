@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import SchemesServices from "./pages/SchemesServices";
 import TestFacilities from "./pages/TestFacilities";
+import Laboratories from "./pages/Laboratories";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/laboratories" element={<Laboratories />} />
           <Route path="/services" element={<Services />} />
           <Route path="/schemes-services" element={<SchemesServices />} />
           <Route path="/facilities" element={<Facilities />} />

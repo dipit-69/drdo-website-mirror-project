@@ -14,31 +14,34 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <img src="/lovable-uploads/c27ffb19-5667-452e-a26a-87cc1a38574a.png" alt="DRDO Logo" className="h-12 w-12" />
             <div>
-              <h1 className="text-xl font-bold text-gray-800">DTTC</h1>
+              <h1 className="text-xl font-bold text-gov-blue">DTTC</h1>
               <p className="text-sm text-gray-600">Defence Technology & Test Centre</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link to="/" className="text-gray-700 hover:text-gov-blue transition-colors">
               Home
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link to="/about" className="text-gray-700 hover:text-gov-blue transition-colors">
               About
+            </Link>
+            <Link to="/laboratories" className="text-gray-700 hover:text-gov-blue transition-colors">
+              Laboratories
             </Link>
             
             {/* Services Dropdown */}
             <div className="relative">
               <button
-                className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"
+                className="flex items-center text-gray-700 hover:text-gov-blue transition-colors"
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
               >
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg z-50">
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg z-50 border">
                   <Link
                     to="/services"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
@@ -57,18 +60,18 @@ const Header = () => {
               )}
             </div>
             
-            <Link to="/facilities" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link to="/facilities" className="text-gray-700 hover:text-gov-blue transition-colors">
               Facilities
             </Link>
-            <Link to="/test-facilities" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link to="/test-facilities" className="text-gray-700 hover:text-gov-blue transition-colors">
               Test Facilities
             </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link to="/contact" className="text-gray-700 hover:text-gov-blue transition-colors">
               Contact
             </Link>
             <Link
               to="/login"
-              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+              className="bg-gov-blue text-white px-4 py-2 rounded-md hover:bg-gov-blue-light transition-colors"
             >
               Login
             </Link>
@@ -89,56 +92,63 @@ const Header = () => {
             <div className="flex flex-col space-y-2">
               <Link
                 to="/"
-                className="text-gray-700 hover:text-blue-600 py-2"
+                className="text-gray-700 hover:text-gov-blue py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className="text-gray-700 hover:text-blue-600 py-2"
+                className="text-gray-700 hover:text-gov-blue py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
+                to="/laboratories"
+                className="text-gray-700 hover:text-gov-blue py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Laboratories
+              </Link>
+              <Link
                 to="/services"
-                className="text-gray-700 hover:text-blue-600 py-2"
+                className="text-gray-700 hover:text-gov-blue py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 to="/schemes-services"
-                className="text-gray-700 hover:text-blue-600 py-2"
+                className="text-gray-700 hover:text-gov-blue py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Schemes & Services
               </Link>
               <Link
                 to="/facilities"
-                className="text-gray-700 hover:text-blue-600 py-2"
+                className="text-gray-700 hover:text-gov-blue py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Facilities
               </Link>
               <Link
                 to="/test-facilities"
-                className="text-gray-700 hover:text-blue-600 py-2"
+                className="text-gray-700 hover:text-gov-blue py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Test Facilities
               </Link>
               <Link
                 to="/contact"
-                className="text-gray-700 hover:text-blue-600 py-2"
+                className="text-gray-700 hover:text-gov-blue py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
               <Link
                 to="/login"
-                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors inline-block"
+                className="bg-gov-blue text-white px-4 py-2 rounded-md hover:bg-gov-blue-light transition-colors inline-block"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Login
