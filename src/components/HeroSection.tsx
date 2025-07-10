@@ -1,87 +1,96 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Bell, Star } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-r from-blue-50 to-blue-100 py-12 overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-        style={{
-          backgroundImage: "url('/lovable-uploads/214e3c88-f20f-4e9f-a64c-607cd0678f80.png')"
-        }}
-      />
-      
-      {/* Light overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-blue-50/70" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            <div className="mb-8">
-              <h2 className="text-4xl font-bold text-gov-blue mb-4">
-                Advancing Defence Through Innovation
-              </h2>
-              <p className="text-lg text-gray-700 mb-6">
-                DRDO is the R&D wing of Ministry of Defence, Government of India, 
-                with a vision to empower India with cutting-edge defence technologies.
-              </p>
-              <div className="flex space-x-4">
-                <Button className="bg-gov-blue hover:bg-gov-blue-light">
-                  Explore Technologies
-                  <ChevronRight className="w-4 h-4 ml-2" />
-                </Button>
-                <Button variant="outline" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white">
-                  View Laboratories
-                </Button>
+    <>
+      {/* Main Hero Section with Background */}
+      <section className="relative bg-gradient-to-r from-blue-50 to-blue-100 py-12 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{
+            backgroundImage: "url('/lovable-uploads/214e3c88-f20f-4e9f-a64c-607cd0678f80.png')"
+          }}
+        />
+        
+        {/* Light overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-blue-50/70" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-2">
+              <div className="mb-8">
+                <h2 className="text-4xl font-bold text-gov-blue mb-4">
+                  Advancing Defence Through Innovation
+                </h2>
+                <p className="text-lg text-gray-700 mb-6">
+                  DRDO is the R&D wing of Ministry of Defence, Government of India, 
+                  with a vision to empower India with cutting-edge defence technologies.
+                </p>
+                <div className="flex space-x-4">
+                  <Button className="bg-gov-blue hover:bg-gov-blue-light">
+                    Explore Technologies
+                    <ChevronRight className="w-4 h-4 ml-2" />
+                  </Button>
+                  <Button variant="outline" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white">
+                    View Laboratories
+                  </Button>
+                </div>
+              </div>
+
+              {/* Key Achievements */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <Card className="border-l-4 border-l-gov-blue bg-white/90 backdrop-blur-sm">
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <Star className="w-8 h-8 text-gov-blue" />
+                      <div>
+                        <h4 className="font-bold text-gov-blue">50+ Labs</h4>
+                        <p className="text-sm text-gray-600">Research Centers</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-gov-accent bg-white/90 backdrop-blur-sm">
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <Star className="w-8 h-8 text-gov-accent" />
+                      <div>
+                        <h4 className="font-bold text-gov-blue">5000+ Patents</h4>
+                        <p className="text-sm text-gray-600">Technologies Developed</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-gov-blue-light bg-white/90 backdrop-blur-sm">
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <Star className="w-8 h-8 text-gov-blue-light" />
+                      <div>
+                        <h4 className="font-bold text-gov-blue">25000+ Scientists</h4>
+                        <p className="text-sm text-gray-600">Research Personnel</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
-
-            {/* Key Achievements */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Card className="border-l-4 border-l-gov-blue bg-white/90 backdrop-blur-sm">
-                <CardContent className="p-4">
-                  <div className="flex items-center space-x-3">
-                    <Star className="w-8 h-8 text-gov-blue" />
-                    <div>
-                      <h4 className="font-bold text-gov-blue">50+ Labs</h4>
-                      <p className="text-sm text-gray-600">Research Centers</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-l-4 border-l-gov-accent bg-white/90 backdrop-blur-sm">
-                <CardContent className="p-4">
-                  <div className="flex items-center space-x-3">
-                    <Star className="w-8 h-8 text-gov-accent" />
-                    <div>
-                      <h4 className="font-bold text-gov-blue">5000+ Patents</h4>
-                      <p className="text-sm text-gray-600">Technologies Developed</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-l-4 border-l-gov-blue-light bg-white/90 backdrop-blur-sm">
-                <CardContent className="p-4">
-                  <div className="flex items-center space-x-3">
-                    <Star className="w-8 h-8 text-gov-blue-light" />
-                    <div>
-                      <h4 className="font-bold text-gov-blue">25000+ Scientists</h4>
-                      <p className="text-sm text-gray-600">Research Personnel</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Announcements Sidebar */}
-          <div className="space-y-6">
-            <Card className="bg-white/90 backdrop-blur-sm">
+      {/* Separate Announcements Section */}
+      <section className="bg-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Announcements */}
+            <Card className="bg-white border border-gray-200">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <Bell className="w-5 h-5 text-gov-blue" />
@@ -108,7 +117,8 @@ const HeroSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/90 backdrop-blur-sm">
+            {/* Quick Links */}
+            <Card className="bg-white border border-gray-200">
               <CardContent className="p-6">
                 <h3 className="font-bold text-gov-blue mb-4">Quick Links</h3>
                 <div className="space-y-2">
@@ -122,8 +132,8 @@ const HeroSection = () => {
             </Card>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
