@@ -1,92 +1,152 @@
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Search, Menu, Phone, Mail } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
   return (
-    <header className="w-full">
-      {/* Top Contact Bar */}
-      <div className="bg-gov-blue-dark text-white py-2 px-4">
-        <div className="container mx-auto flex justify-between items-center text-sm">
+    <header className="bg-white shadow-md">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Phone className="w-3 h-3" />
-              <span>+91-11-23317725</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Mail className="w-3 h-3" />
-              <span>info@drdo.gov.in</span>
+            <img src="/lovable-uploads/c27ffb19-5667-452e-a26a-87cc1a38574a.png" alt="DRDO Logo" className="h-12 w-12" />
+            <div>
+              <h1 className="text-xl font-bold text-gray-800">DTTC</h1>
+              <p className="text-sm text-gray-600">Defence Technology & Test Centre</p>
             </div>
           </div>
-          <div className="hidden md:flex space-x-4 text-xs">
-            <a href="#" className="hover:text-blue-300">हिंदी</a>
-            <a href="#" className="hover:text-blue-300">Screen Reader</a>
-            <a href="#" className="hover:text-blue-300">Skip to Content</a>
-          </div>
-        </div>
-      </div>
 
-      {/* Main Header */}
-      <div className="bg-gov-blue border-b-4 border-gov-accent">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo and Title */}
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/c27ffb19-5667-452e-a26a-87cc1a38574a.png" 
-                  alt="DRDO Logo" 
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-white">
-                  Defence Research and Development Organisation
-                </h1>
-                <p className="text-sm text-blue-200">Ministry of Defence, Government of India</p>
-              </div>
-            </div>
-
-            {/* Search */}
-            <div className="hidden md:flex items-center space-x-2">
-              <Input 
-                placeholder="Search..." 
-                className="w-64 bg-white/90 border-blue-300" 
-              />
-              <Button size="sm" className="bg-gov-accent hover:bg-blue-400 text-gov-blue">
-                <Search className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <nav className="bg-gov-blue-light text-white">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <div className="hidden md:flex space-x-8 py-3">
-              <a href="#" className="hover:text-blue-300 transition-colors">Home</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">DRDO</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">Organisation</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">Outreach</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">Careers</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">Publications</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">RTI</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">Contact Us</a>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Home
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
+              About
+            </Link>
+            
+            {/* Services Dropdown */}
+            <div className="relative">
+              <button
+                className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+              >
+                Services
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg z-50">
+                  <Link
+                    to="/services"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    Our Services
+                  </Link>
+                  <Link
+                    to="/schemes-services"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    Schemes & Services
+                  </Link>
+                </div>
+              )}
             </div>
             
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="md:hidden text-white hover:text-blue-300"
+            <Link to="/facilities" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Facilities
+            </Link>
+            <Link to="/test-facilities" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Test Facilities
+            </Link>
+            <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Contact
+            </Link>
+            <Link
+              to="/login"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
             >
-              <Menu className="w-5 h-5" />
-            </Button>
-          </div>
+              Login
+            </Link>
+          </nav>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
-      </nav>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t">
+            <div className="flex flex-col space-y-2">
+              <Link
+                to="/"
+                className="text-gray-700 hover:text-blue-600 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className="text-gray-700 hover:text-blue-600 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="/services"
+                className="text-gray-700 hover:text-blue-600 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link
+                to="/schemes-services"
+                className="text-gray-700 hover:text-blue-600 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Schemes & Services
+              </Link>
+              <Link
+                to="/facilities"
+                className="text-gray-700 hover:text-blue-600 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Facilities
+              </Link>
+              <Link
+                to="/test-facilities"
+                className="text-gray-700 hover:text-blue-600 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Test Facilities
+              </Link>
+              <Link
+                to="/contact"
+                className="text-gray-700 hover:text-blue-600 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <Link
+                to="/login"
+                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Login
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
     </header>
   );
 };
