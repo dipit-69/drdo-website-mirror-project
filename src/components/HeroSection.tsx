@@ -5,8 +5,19 @@ import { ChevronRight, Bell, Star } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-12">
-      <div className="container mx-auto px-4">
+    <section className="relative bg-gradient-to-r from-blue-50 to-blue-100 py-12 overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: "url('/lovable-uploads/d49436dc-a8ee-4266-a6f1-3be42614ee05.png')"
+        }}
+      />
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-blue-800/20" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
@@ -31,7 +42,7 @@ const HeroSection = () => {
 
             {/* Key Achievements */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Card className="border-l-4 border-l-gov-blue">
+              <Card className="border-l-4 border-l-gov-blue bg-white/95 backdrop-blur-sm">
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-3">
                     <Star className="w-8 h-8 text-gov-blue" />
@@ -43,7 +54,7 @@ const HeroSection = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-gov-accent">
+              <Card className="border-l-4 border-l-gov-accent bg-white/95 backdrop-blur-sm">
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-3">
                     <Star className="w-8 h-8 text-gov-accent" />
@@ -55,7 +66,7 @@ const HeroSection = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-gov-blue-light">
+              <Card className="border-l-4 border-l-gov-blue-light bg-white/95 backdrop-blur-sm">
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-3">
                     <Star className="w-8 h-8 text-gov-blue-light" />
@@ -71,7 +82,7 @@ const HeroSection = () => {
 
           {/* Announcements Sidebar */}
           <div className="space-y-6">
-            <Card>
+            <Card className="bg-white/95 backdrop-blur-sm">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <Bell className="w-5 h-5 text-gov-blue" />
@@ -98,7 +109,7 @@ const HeroSection = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-white/95 backdrop-blur-sm">
               <CardContent className="p-6">
                 <h3 className="font-bold text-gov-blue mb-4">Quick Links</h3>
                 <div className="space-y-2">

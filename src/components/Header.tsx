@@ -33,8 +33,12 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo and Title */}
             <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center border-2 border-gov-accent">
-                <span className="text-gov-blue font-bold text-xl">DRDO</span>
+              <div className="w-16 h-16 rounded-full flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/c27ffb19-5667-452e-a26a-87cc1a38574a.png" 
+                  alt="DRDO Logo" 
+                  className="w-16 h-16 rounded-full object-cover"
+                />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-white">
