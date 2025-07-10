@@ -8,14 +8,14 @@ const HeroSection = () => {
     <section className="relative bg-gradient-to-r from-blue-50 to-blue-100 py-12 overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
         style={{
-          backgroundImage: "url('/lovable-uploads/d49436dc-a8ee-4266-a6f1-3be42614ee05.png')"
+          backgroundImage: "url('/lovable-uploads/214e3c88-f20f-4e9f-a64c-607cd0678f80.png')"
         }}
       />
       
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-blue-800/20" />
+      {/* Stronger overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-blue-50/90" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
